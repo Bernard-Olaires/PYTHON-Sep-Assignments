@@ -51,3 +51,13 @@ if bmi < 25:
 else:
     print(name)
     print("is overweight")
+
+
+age = 20
+
+if age > 18:
+    print("can drive")
+elif age < 18:
+    print("cant drive")
+else:
+    print("not yet old enough")

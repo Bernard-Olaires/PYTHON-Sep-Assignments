@@ -40,3 +40,26 @@ mult = 3
 for i in range(low,high + 1):
     if i % mult == 0:
         print(i)
+
+
+
+student = [
+    {"name": "Bernard", "age": 25, "stacks": ["python", "MERN", "Java"]},
+    {"name": "Jordan", "age": 21, "stacks": ["Web Fund", "Python", "Algo"]},
+    {"name": "Patrick", "age": 23, "stacks": ["HTML", "CSS", "JAVA"]}
+]
+
+for element in student:
+    print("THE student IS???", element["name"])
+    for stack in element["stacks"]:
+        print(stack)
+
+
+for i in range(1, 101):
+    if i % 3 == 0 and i % 5 == 0:
+        print("fizzbuzz")
+    elif i % 5 == 0:
+        print("buzz")
+    elif i % 3 == 0 :
+        print("fizz")
+
