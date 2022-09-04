@@ -1,18 +1,18 @@
 
 # # def = function
 
-def add(a, b): # we named the function "add" and added two parameters "a" and "b"
-    x = a + b # process or what would this function do
-    return x # returns the value
+#def add(a, b): # we named the function "add" and added two parameters "a" and "b"
+#     x = a + b # process or what would this function do
+#     return x # returns the value
 
-sum1 = add(5,5)  # calling the add function, with arguments 3 and 5
-print(sum1) # result of the add function gets send back to and saved into sum1, so we will see 10
+# sum1 = add(5,5)  # calling the add function, with arguments 3 and 5
+# print(sum1) # result of the add function gets send back to and saved into sum1, so we will see 10
 
-sum2 = add(10, 20)
-sum3 = add(20,10)
-sum4 = sum2 + sum3
+# sum2 = add(10, 20)
+# sum3 = add(20,10)
+# sum4 = sum2 + sum3
 
-print(sum2, sum3, sum4)
+# print(sum2, sum3, sum4)
 
 
 
@@ -66,6 +66,9 @@ print(sum2, sum3, sum4)
 # print(sum2)
 
 # print("the value of sum1 is ", sum1)
+
+
+
 
 
 # def fizz_buzz(num):
