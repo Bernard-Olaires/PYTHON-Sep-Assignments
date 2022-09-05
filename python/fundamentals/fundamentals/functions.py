@@ -1,7 +1,7 @@
 
 # # def = function
 
-#def add(a, b): # we named the function "add" and added two parameters "a" and "b"
+# def add(a, b): # we named the function "add" and added two parameters "a" and "b"
 #     x = a + b # process or what would this function do
 #     return x # returns the value
 
@@ -37,7 +37,7 @@
 
 # def function_name():
 #     pass
-#     # function body
+#     # function bodyz
 
 # # call or invoke the function 
 # # DONT DO THIS "function_name" you need () to invoke the function
@@ -98,6 +98,7 @@
 
 # b = 500
 # print(b)
+
 # def foobar():
 #     print(b)
 #     return(b)
@@ -105,5 +106,20 @@
 # b = foobar()
 # print(b)
 
+name1 = "Bernard"
+checking1 = 18
 
+name2 = "Jordan" 
+checking2 = 1000
+
+def bank_account(name,checking):
+    print("Name: ")
+    print(name)
+    print("balance: ")
+    print(checking)
+    if checking < 20:
+        print("Account below budget")
+
+bank_account(name1, checking1)
+bank_account(name2,checking2)
 
