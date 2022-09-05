@@ -35,7 +35,7 @@ bernards_car = {
 print(bernards_car)
 
 print("------------------------") #gives space to output
-
+ 
 for each_key in bernards_car: 
     print(each_key)
 
