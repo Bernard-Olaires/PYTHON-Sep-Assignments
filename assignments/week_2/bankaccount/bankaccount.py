@@ -1,7 +1,9 @@
 class BankAccount:
+    accounts = []
     def __init__(self, int_rate, balance):
         self.int_rate = int_rate
         self.balance = balance
+        BankAccount.accounts.append(self)
 
     def deposit(self, amount):
         self.balance += amount
@@ -31,5 +33,6 @@ class BankAccount:
 savings = BankAccount(.05, 2000)
 checking = BankAccount(.02, 1500)
 
-savings.yeild_interest().deposit(100).deposit(300).withdraw(50).withdraw(15).withdraw(25).withdraw(45).display_account_info()
+savings.deposit(100).deposit(300).withdraw(50).withdraw(15).withdraw(25).withdraw(45).display_account_info()
 
+BankAccount.print_all_accounts()
