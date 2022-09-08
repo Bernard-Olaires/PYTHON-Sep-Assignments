@@ -1,16 +1,26 @@
+from re import A
+
+
 class User:
     
-    def __init__(self, name="Unassigned", starting_balance=0, interst_rate=0.04):
+    def __init__(self, name="Unassigned"):
         self.name = name
-        self.account = BankAccount(starting_balance, interst_rate)
+        self.accounts = {}
+
+    def open_new_account(self, with_amount=0, interest=0.04, account_type="checking"):
+        print("Creating new account..")
+        self.accounts[account_type] = BankAccount(with_amount, interest, account_type)
         
-    def withdrawl(self, amount):
-            self.account.withdraw(amount)
+    # creating a method(function) that decreases the users balance by specified amount
+    def make_withdraw(self, amount, account_type="checking"):
+            self.accounts[account_type].withdraw(amount)
             return self
 
+    #creating a method that prints name and account balance
     def display_user_balance(self):
         print(self.name)
-        self.account.display_account_info()
+        for account_name in self.accounts:
+            self.accounts[account_name].display_info()
         return self
 
     def make_deposit(self, amount):
@@ -51,13 +61,15 @@ class BankAccount:
     @classmethod
     def print_all_accounts(cls):
         for account in cls.accounts:
-            account.display_account_info()
+            BankAccount.display_account_info()
 
 
 bernard = User("Bernard Olaires")
 
-bernard.display_user_balance().make_deposit(100)
+bernard.display_user_balance().make_deposit(100).withdrawl(50).display_user_balance()
 
-bernard.make_deposit()
+b
+
+
 
 
