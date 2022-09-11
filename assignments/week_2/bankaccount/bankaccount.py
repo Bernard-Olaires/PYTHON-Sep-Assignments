@@ -30,9 +30,10 @@ class BankAccount:
         for account in cls.accounts:
             account.display_account_info()
 
+
 savings = BankAccount(.05, 2000)
 checking = BankAccount(.02, 1500)
 
 savings.deposit(100).deposit(300).withdraw(50).withdraw(15).withdraw(25).withdraw(45).display_account_info()
 
-BankAccount.print_all_accounts()
+BankAccount.print_all_accounts() 
