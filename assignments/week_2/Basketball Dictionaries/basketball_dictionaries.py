@@ -49,7 +49,6 @@ print("-------------------------")
 
 
 
-
 players = [
     {
     "name": "Kevin Durant", 
