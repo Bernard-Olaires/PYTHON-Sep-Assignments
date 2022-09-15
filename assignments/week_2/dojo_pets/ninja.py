@@ -1,3 +1,6 @@
+from pets import Pet
+# directly importing Pet class from pets
+
 class Ninja:
     def __init__(self, first_name, last_name, treats, pet_food, pet):
         self.first_name = first_name
@@ -22,33 +25,6 @@ class Ninja:
     def bathe(self):
         self.pet.noise_()
 
-class Pet(Ninja):
-    def __init__(self, name, type, tricks, noise):
-        self.name = name
-        self.type = type 
-        self.tricks = tricks
-        self.health = 100
-        self.energy = 50
-        self.noise = noise
-    
-    def sleep(self):
-        self.energy += 25
-        return self
-    
-    def eat(self):
-        self.energy += 5
-        self.health += 10
-        return self
-    
-    def play(self):
-        self.health += 5
-        self.energy -= 15
-        return self
-    
-    def noise_(self):
-        print(self.noise)
-
-
 my_treats = ["Bacon", "Rabbit Ear", "Turkey Necks"]
 my_pet_food = ["Meat Patties", "Chicken"]
 
@@ -59,3 +35,6 @@ bernard = Ninja("Bernard", "Olaires", my_treats, my_pet_food, rocco)
 bernard.feed()
 bernard.walk()
 bernard.bathe()
+
+
+
