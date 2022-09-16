@@ -6,12 +6,16 @@ class Player:
         self.position = data['position']
         self.team = data['team']
 
+    def __repr__(self):
+        return self.name 
     # not needed but wanted to create a print method
+
     def print_player(self):
-        print(f"Player: {self.name},")
+        (f"Player: {self.name},")
         print(f"Age: {self.age}")
         print(f"Position: {self.position}")
         print(f"Team: {self.team}")
+
 
 
 kevin = {
@@ -93,4 +97,5 @@ for player_dict in players:
     player = Player(player_dict)
     new_team.append(player)
     #new_team.append(Player(player_dict))
+
 print(new_team)
