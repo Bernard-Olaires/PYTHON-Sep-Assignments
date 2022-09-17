@@ -1,0 +1,46 @@
+SELECT * FROM dojos;
+
+INSERT INTO dojos (name, created_at, updated_at) 
+VALUE ("Web Fundamentals Yellow Belt", NOW(), NOW()),
+("Python Black Belt", NOW(), NOW()),
+("Python Red Belt", NOW(), NOW());
+
+DELETE FROM dojos WHERE id <= 1;
+
+SELECT * FROM dojos;
+
+DELETE FROM dojos WHERE id = 2 OR id = 3;
+
+SELECT * FROM dojos;
+
+INSERT INTO dojos (name, created_at, updated_at) 
+VALUE ("GREEN BELT", NOW(), NOW()),
+("PURPLE BELT", NOW(), NOW()),
+("BLACK BELT", NOW(), NOW());
+
+SELECT * FROM dojos;
+
+
+SELECT * FROM ninjas;
+
+INSERT INTO ninjas (first_name, last_name, created_at, updated_at, dojo_id) VALUES ("Bernard", "Olaires", NOW(), NOW(), 4), 
+("Jordan", "Jarandson", NOW(), NOW(), 4), 
+("Lukas", "HOWA", NOW(), NOW(), 4);
+
+INSERT INTO ninjas (first_name, last_name, created_at, updated_at, dojo_id) VALUES ("Patrick", "Olaires", NOW(), NOW(), 5), 
+("Julia", "Jarandson", NOW(), NOW(), 5), 
+("Aleigha", "HOWA", NOW(), NOW(), 5);
+
+INSERT INTO ninjas (first_name, last_name, created_at, updated_at, dojo_id) VALUES ("Marichu", "Olaires", NOW(), NOW(), 6), 
+("Beth", "Jarandson", NOW(), NOW(), 6), 
+("Nancy", "HOWA", NOW(), NOW(), 6);
+
+SELECT * FROM ninjas; 
+
+SELECT * FROM ninjas WHERE dojo_id = 4;
+
+SELECT * FROM ninjas WHERE dojo_id = 6;
+
+SELECT * FROM ninjas WHERE id = 16;
+
+
