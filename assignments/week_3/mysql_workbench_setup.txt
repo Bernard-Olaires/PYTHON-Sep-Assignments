@@ -1,0 +1,5 @@
+INSERT INTO names (name, created_at, updated_at) VALUES ("Bernard", NOW(), NOW());
+SELECT * FROM names;
+INSERT INTO names (name, created_at, updated_at) VALUES ("Jordan", NOW(), NOW()), ("Patrick", NOW(), NOW());
+UPDATE names.names SET name = "Ben" WHERE ID = 1;
+DELETE FROM names WHERE id = 3;
