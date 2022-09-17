@@ -1,0 +1,59 @@
+SELECT * FROM users;
+
+INSERT INTO users (first_name, last_name, created_at, updated_at)
+VALUES ("Jane", "Amsden", NOW(), NOW()),
+("Emily", "Dixon", NOW(), NOW()),
+("Theodore", "Dostoevsky", NOW(), NOW()),
+("William", "Shapiro", NOW(), NOW()),
+("Lao", "Xiu", NOW(), NOW());
+
+
+SELECT * FROM books;
+
+INSERT INTO books (title, num_of_pages, created_at, updated_at) 
+VALUES ("C Sharp", 100, NOW(), NOW()),
+("Java", 150, NOW(), NOW()),
+("Python", 200, NOW(), NOW()),
+("PHP", 250, NOW(), NOW()),
+("Ruby", 300, NOW(), NOW());
+
+UPDATE books_schema.books SET title = "C#" WHERE id = 1;
+
+SELECT * FROM users WHERE id = 4;
+UPDATE books_schema.users SET first_name = "Bill" WHERE id = 4;
+
+SELECT * FROM favorites;
+
+INSERT INTO favorites (user_id, book_id) 
+VALUES (1 , 1),
+(1, 2);
+
+INSERT INTO favorites (user_id, book_id) 
+VALUES (2 , 1),
+(2, 2),
+(2, 3);
+
+INSERT INTO favorites (user_id, book_id) 
+VALUES (3 , 1),
+(3, 2),
+(3, 3),
+(3, 4);
+
+INSERT INTO favorites (user_id, book_id) 
+VALUES (4 , 1),
+(4, 2),
+(4, 3),
+(4, 4),
+(4, 5);
+
+
+SELECT * FROM favorites WHERE book_id = 3;
+
+DELETE FROM favorites WHERE user_id = 2;
+
+
+INSERT INTO favorites (user_id, book_id) VALUES (5,2);
+
+SELECT * FROM favorites WHERE user_id = 3;
+
+SELECT * FROM favorites WHERE book_id = 5;
