@@ -12,6 +12,20 @@ def index():
         session["count"] += 1
     return render_template("index.html")
 
+@app.route('/add2')
+def add2():
+    if "count" not in session:
+        session["count"] = 0
+    else:
+        session["count"] += 2
+    return render_template("index.html")
+
+@app.route('/custom', methods=['POST'])
+def custom_increment():
+    
+    return redirect('/')
+
+
 @app.route('/reset')
 def reset():
     session.clear()
