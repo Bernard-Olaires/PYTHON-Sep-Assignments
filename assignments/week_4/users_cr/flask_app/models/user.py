@@ -17,7 +17,7 @@ class User:
 
     @classmethod
     def get_all(cls):
-        query = "SELECT * FROM users"
+        query = "SELECT * FROM users;"
         # make sure to call the connectToMySQL function with the schema you are targeting.
         results = connectToMySQL(cls.DB).query_db(query)
         print("__ ALL FRIENDS __", results)
@@ -31,7 +31,7 @@ class User:
     @classmethod
     def get_user_by_id(cls, id):
         data = {"id":id}
-        query = "SELECT * FROM users WHERE id=%(id)s"
+        query = "SELECT * FROM users WHERE id=%(id)s;"
         results = connectToMySQL(cls.DB).query_db(query,data)
         print("__ GET ONE PRODUCT __", results)
         return cls(results[0])
@@ -45,7 +45,7 @@ class User:
     
     @classmethod
     def update_user(cls, data):
-        query = "UPDATE users SET first_name=%(first_name)s, last_name=%(last_name)s, email=%(email)s, created_at = NOW(), updated_at = NOW() WHERE id = %(id)s;"
+        query = "UPDATE users SET first_name=%(first_name)s, last_name=%(last_name)s, email=%(email)s,created_at=NOW(),updated_at=NOW() WHERE id= %(id)s;"
         results = connectToMySQL(cls.DB).query_db(query,data)
         print("__ UPDATED USER __", results)
         return results

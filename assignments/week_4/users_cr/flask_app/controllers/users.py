@@ -29,10 +29,11 @@ def edit_user(id):
 
 @app.route('/user/update', methods=['POST'])
 def update():
+    print(request.form)
     User.update_user(request.form)
-    return redirect('/users')
+    return redirect("/users")
 
-@app.route("/users/show/<id>")
+@app.route("/users/show/<int:id>")
 def update_user(id):
     one_user = User.get_user_by_id(id)
     return render_template("show.html", user=one_user)

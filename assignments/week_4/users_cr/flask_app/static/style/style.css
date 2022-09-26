@@ -93,7 +93,7 @@
 /* SHOW STYLE */
 
 .show_center {
-    max-width: 300px;
+    max-width: 700px;
     margin: 2rem auto;
     background-color: lightgray;
     text-align: center;
@@ -101,8 +101,8 @@
 }
 
 .show_container {
-    max-width: 500px;
-    height: 225px;
+    max-width: 700px;
+    height: 275px;
     margin: 2rem auto;
     background-color: lightgray;
     text-align: left;
@@ -110,8 +110,13 @@
 }
 
 .show_container p{
-    font-size: 30px;
+    font-size: 40px;
     padding: 10px;
+}
+
+.show_nav {
+    margin-top: 20px;
+    width: 100px;
 }
 
 /* EDIT STYLE */
@@ -122,4 +127,14 @@
     background-color: lightgray;
     text-align: center;
     border: 2px solid teal;
+}
+
+.edit_button {
+    margin-top: 30px;
+    width: 200px;
+}
+
+.edit_nav {
+    max-width: 568px;
+    margin: 2rem auto;
 }

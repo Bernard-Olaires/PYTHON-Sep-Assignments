@@ -12,6 +12,8 @@
     </div>
     <form class="new_form" action="/user/update" method="post">
         <div>
+            <!-- adding a hidden input so we can query the user id through our class method -->
+            <input type="hidden" name="id" value={{user.id}}
             <label for="first_name">First Name</label>
             <input type="text" name="first_name" value="{{user['first_name']}}">
         </div>
@@ -20,10 +22,16 @@
             <input type="text" name="last_name" value="{{user['last_name']}}">
         </div>
         <div>
-            <label for="email">Email address</label>
+            <label for="email">Email Address</label>
             <input type="email" name="email" value="{{user['email']}}">
         </div>
-        <input type="submit" value="Update User">
+        <div class="edit_button">
+            <input type="submit" value="Update User">
+        </div>
     </form>
+    <div class="edit_nav">
+        <a href="/">Home</a>
+        <a href="/users/show/{{ user.id }}">Show</a>
+    </div>
 </body>
 </html>
