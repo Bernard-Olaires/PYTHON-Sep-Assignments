@@ -26,7 +26,7 @@ class Ninja:
             ninjas.append( cls(ninja) )
         # Iterate over the db results and create instances of ninjas with cls
         return ninjas
-    
+
     @classmethod
     def get_ninja_by_id(cls, id):
         data = {"id" : id}
@@ -34,25 +34,25 @@ class Ninja:
         results = connectToMySQL(cls.DB).query_db(query, data)
         print("__ GET NINJA BY ID __", results)
         return cls(results[0])
-    
+
     @classmethod
     def create_ninja(cls, data):
-        query = "INSERT INTO ninjas (first_name, last_name, age) VALUES (%(first_name)s, %(last_name)s, %(age)s);"
+        query = "INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES (%(first_name)s, %(last_name)s, %(age)s, %(dojo_id)s);"
         results = connectToMySQL(cls.DB).query_db(query,data)
         print("__ CREATE NINJA __", results)
         return results
-    
+
     @classmethod
     def updated_ninja(cls, data):
         query = "UPDATE ninjas SET first_name=%(first_name)s, last_name=%(last_name)s, age=%(age)s, created_at=NOW(), updated_at=NOW() WHERE id=%(id)s;"
         results = connectToMySQL(cls.DB).query_db(query,data)
         print("__ UPDATED NINJA __", results)
         return results
-    
+
     @classmethod
     def delete_ninja(cls, id):
         data = {"id" : id}
-        query = "DELETE FROM ninja WHERE id=%(id)s;"
+        query = "DELETE FROM ninjas WHERE id=%(id)s;"
         results = connectToMySQL(cls.DB).query_db(query, data)
         print("__ DELETED NINJA __", results)
         return results

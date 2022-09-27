@@ -2,6 +2,8 @@ from flask_app.config.mysqlconnection import connectToMySQL
 from flask_app.models import ninja
 
 class Dojo:
+    DB = "dojos_and_ninjas_schema"
+    
     def __init__(self, data):
         self.id = data['id']
         self.name = data['name']
@@ -9,8 +11,46 @@ class Dojo:
         self.updated_at = data['updated_at']
         self.ninjas = []
     
+    @classmethod
+    def get_all_dojo(cls):
+        query = "SELECT * FROM dojos;"
+        results = connectToMySQL(cls.DB).query_db(query)
+        print("__ GET ALL DOJO __", results)
+        dojos = []
+        for dojo in results:
+            dojos.append( cls(dojo) )
+        return dojos
     
+    # @classmethod
+    # def get_dojo_by_id(cls, id):
+    #     data = {"id" : id}
+    #     query = "SELECT * FROM dojos WHERE id=%(id)s;"
+    #     results = connectToMySQL(cls.DB).query_db(query, data)
+    #     print("__ GET ONE DOJO __", results)
+    #     return cls(results[0])
     
-    #     SELECT * FROM dojos
-    # LEFT JOIN ninjas on ninjas.dojo_id = dojos.id
-    # WHERE dojos.id = %(id)s;
+    @classmethod
+    def create_dojo(cls, data):
+        query = "INSERT INTO dojos (name) VALUES (%(name)s);"
+        results = connectToMySQL(cls.DB).query_db(query, data)
+        print("__ CREATE DOJO __", results)
+        return results
+
+    @classmethod
+    def get_dojo_with_ninja(cls, id):
+        data = {"id" : id}
+        query = "SELECT * FROM dojos LEFT JOIN ninjas on dojos.id = ninjas.dojo_id WHERE dojos.id = %(id)s;"
+        results = connectToMySQL(cls.DB).query_db(query, data)
+        print("__ GET DOJO WITH NINJA __", results)
+        restaurant = cls( results[0] )
+        for row_from_db in results:
+            ninja_data = {
+                "id" : row_from_db["ninjas.id"],
+                "first_name" : row_from_db["first_name"],
+                "last_name" : row_from_db["last_name"],
+                "age" : row_from_db["age"],
+                "created_at" : row_from_db["ninjas.created_at"],
+                "updated_at" : row_from_db["ninjas.updated_at"]
+            }
+            restaurant.ninjas.append( ninja.Ninja( ninja_data ))
+        return restaurant
