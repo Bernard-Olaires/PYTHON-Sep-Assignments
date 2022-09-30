@@ -15,7 +15,6 @@ class Dojo:
     def get_all_dojo(cls):
         query = "SELECT * FROM dojos;"
         results = connectToMySQL(cls.DB).query_db(query)
-        print("__ GET ALL DOJO __", results)
         dojos = []
         for dojo in results:
             dojos.append( cls(dojo) )
@@ -33,7 +32,6 @@ class Dojo:
     def create_dojo(cls, data):
         query = "INSERT INTO dojos (name) VALUES (%(name)s);"
         results = connectToMySQL(cls.DB).query_db(query, data)
-        print("__ CREATE DOJO __", results)
         return results
 
     @classmethod
@@ -54,3 +52,7 @@ class Dojo:
             }
             restaurant.ninjas.append( ninja.Ninja( ninja_data ))
         return restaurant
+
+
+
+

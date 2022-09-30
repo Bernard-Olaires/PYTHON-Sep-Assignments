@@ -21,3 +21,8 @@ def create_dojo():
 def show_dojo(id):
     dojos_with_ninjas = Dojo.get_dojo_with_ninja(id)
     return render_template("dojo.html", dojo = dojos_with_ninjas)
+
+
+@app.route('/home')
+def home():
+    return redirect('/')

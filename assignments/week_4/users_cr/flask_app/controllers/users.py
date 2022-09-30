@@ -34,7 +34,7 @@ def update():
     return redirect("/users")
 
 @app.route("/users/show/<int:id>")
-def update_user(id):
+def show_user(id):
     one_user = User.get_user_by_id(id)
     return render_template("show.html", user=one_user)
     

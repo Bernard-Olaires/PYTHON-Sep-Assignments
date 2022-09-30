@@ -1,0 +1,48 @@
+#index {
+    background-color: lightblue;
+    max-width: 700px;
+    height: 600px;
+    margin: auto;
+    border: 2px solid black;
+    margin-top: 30px;
+}
+
+/* INDEX.HTML STYLE  */
+.flexbox-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.flexbox-item {
+    margin: 10px;
+}
+
+.all-dojos{
+    border: 2px solid black;
+}
+
+.all-dojos p {
+    margin-left: 5px;
+}
+
+.edit_ninja {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.create-dojo {
+    margin-top: 10px;
+}
+
+.add-ninja {
+    margin-top: 10px;
+}
+
+/* INDEX.HTML STYLE */
+
+
+/* DOJO.HTML STYLE */
+

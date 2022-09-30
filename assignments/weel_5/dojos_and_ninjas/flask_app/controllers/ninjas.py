@@ -24,7 +24,7 @@ def edit_ninja(id):
 def update_ninja():
     print(request.form)
     Ninja.updated_ninja(request.form)
-    return redirect("/")
+    return redirect("/dojos")
 
 @app.route('/ninja/delete/<int:id>')
 def delete_ninja(id):
