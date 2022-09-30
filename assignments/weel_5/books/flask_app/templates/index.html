@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authors</title>
+</head>
+<body>
+    <div class="flexbox-container">
+        <div class="flexbox-item flex-item-1">
+            <h1>New Author</h1>
+            <form action="/create/author" method="post">
+                <label for="name">
+                    Name:
+                </label>
+                <input type="text" name="name">
+                <div class="create-author">
+                    <input type="submit" value="Create Author">
+                </div>
+            </form>
+        </div>
+        <div class="flexbox-item flex-item-2">
+            <h1>All Authors</h1>
+            <div class="all-authors">
+                {% for author in all_authors  %}
+                    <p>
+                        <a href="/author/{{ author.id }}">{{ author['name'] }}</a>
+                    </p>
+                {% endfor %}
+            </div>
+            <div class="add_book">
+                <a href="/books">Add Book</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
