@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/books.css') }}">
+    <title>Books</title>
+</head>
+<body>
+    <div class="flexbox-container">
+        <div class="flexbox-item flex-item-1">
+            <h1>New Books</h1>
+            <form action="/create/book" method="post" class="form-book">
+                <label for="title">
+                    Title:
+                </label>
+                <input type="text" name="title">
+                <label for="num_of_pages">
+                    Number Of Pages:
+                </label>
+                <input type="text" name="num_of_pages">
+                <div class="create-book">
+                    <input type="submit" value="Create Book">
+                </div>
+            </form>
+            <div class="home">
+                <a href="/home">Home</a>
+            </div>
+        </div>
+        <div class="flexbox-item flex-item-2">
+            <h1>All Books</h1>
+            <div class="all-books">
+                {% for book in all_books  %}
+                    <p>
+                        <a href="/book/{{ book.id }}">{{ book.title }}</a>
+                    </p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

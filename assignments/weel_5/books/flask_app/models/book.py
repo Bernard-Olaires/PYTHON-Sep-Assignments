@@ -1,4 +1,3 @@
-from unittest import result
 from flask_app.config.mysqlconnection import connectToMySQL
 from flask_app.models import author
 
@@ -31,19 +30,14 @@ class Book:
     
     @classmethod
     def get_by_id_books_favorited_by_author(cls, data):
-        query = """
-        SELECT * FROM books 
-        LEFT JOIN favorites ON books.id = favorites.book_id 
-        LEFT JOIN authors ON authors.id = favorites.author_id 
-        WHERE books.id = %(id)s;
-        """
+        query = "SELECT * FROM books LEFT JOIN favorites ON books.id = favorites.book_id LEFT JOIN authors ON authors.id = favorites.author_id WHERE books.id = %(id)s;"
         results = connectToMySQL(cls.DB).query_db(query, data)
         print("__ GET BY ID BOOKS FAVORITED BY AUTHOR __", results)
         
-        book = cls( results[0] )
+        books = cls( results[0] )
         
         for row in results:
-            if row['author.id'] == None:
+            if row['authors.id'] == None:
                 break
             data = {
                 "id" : row['authors.id'],
@@ -51,8 +45,8 @@ class Book:
                 "created_at" : row['created_at'],
                 "updated_at" : row['updated_at']
             }
-            book.authors_who_favorited.append( author.Author(data))
-        return book
+            books.authors_who_favorited.append( author.Author(data))
+        return books
     
     @classmethod
     def unfavorited_books(cls, data):

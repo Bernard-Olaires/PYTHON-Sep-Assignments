@@ -67,6 +67,7 @@ class Author:
             data = {
                 "id" : row['books.id'],
                 "title" : row['title'],
+                "num_of_pages" : row['num_of_pages'],
                 "created_at" : row['created_at'],
                 "updated_at" : row['updated_at']
                 
