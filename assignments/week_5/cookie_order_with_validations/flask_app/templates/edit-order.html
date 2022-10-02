@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Edit Order</title>
+</head>
+<body>
+    <div class="flexbox-container">
+        <div clas="flex-item-1">
+            <form action="/update/order" method="post" class="new-form">
+                {% with messages=get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <p style="color: red;">{{message}}</p>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+
+                <input type="hidden" name="id" value="{{ order.id }}">
+
+                <label for="name">Name:</label>
+                <input type="text" name="name" value="{{ order['name'] }}">
+
+                <label for="cookie_type">Cookie Type:</label>
+                <input type="cookie_type" name="cookie_type" value="{{order['cookie_type']}}">
+
+                <label for="num_of_boxes">Number of Boxes:</label>
+                <input type="text" name="num_of_boxes" value="{{order['num_of_boxes']}}">
+
+                <div class="edit-button">
+                    <input type="submit" value="Update Order">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
