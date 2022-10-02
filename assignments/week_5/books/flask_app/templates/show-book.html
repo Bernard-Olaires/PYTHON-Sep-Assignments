@@ -15,6 +15,9 @@
             {% for author in book.authors_who_favorited %}
             <p>{{ author['name']  }}</p>
             {% endfor %}
+            <div class="home">
+                <a href="/home">Home</a>
+            </div>
         </div>
         <div class="flexbox-item flex-tiem-2">
             <form action="/join/author" method="post">

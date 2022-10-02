@@ -1,0 +1,52 @@
+SELECT * FROM authors; 
+
+INSERT INTO authors (name) 
+VALUES ("Dr. Suess"),
+		("Mark Twain"),
+        ("Ernest Hemingway"),
+        ("Stephen King"),
+        ("Lemony Snicket");
+
+UPDATE authors SET name = "George R.R Martin" WHERE id = 1;
+        
+SELECT * FROM books;
+
+INSERT INTO books (title, num_of_pages) 
+VALUES ("Jade City", "560"),
+		("Monster Hunter International", "736"),
+        ("The Lord of The Rings: The Fellowship of Rings", "479"),
+        ("The Lord of The Rings: The Two Towers", "532"),
+        ("The Lord of The Rings: The Return of the King", "416"),
+        ("The Great Gatsby", "208"),
+        ("1984", "328");
+        
+INSERT INTO books (title, num_of_pages) 
+VALUES ("Harry Potter and the Philospher's Stone", "223"),
+		("Harry Potter and the Chamber of Secrets", "251"),
+        ("Harry Potter and the Prisoner of Azkaban", "317"),
+        ("Harry Potter and the Goblet of Fire", "636");
+        
+SELECT * FROM favorites;
+
+INSERT INTO favorites (author_id, book_id) 
+VALUES (1,6);
+
+SELECT * FROM authors;
+
+SELECT * FROM authors 
+WHERE authors.id 
+NOT IN ( SELECT author_id FROM favorites WHERE book_id = 1);
+
+SELECT * FROM authors 
+LEFT JOIN favorites ON authors.id = favorites.author_id 
+LEFT JOIN books ON books.id = favorites.book_id 
+WHERE authors.id = 1;
+
+SELECT * FROM books 
+LEFT JOIN favorites ON books.id = favorites.book_id 
+LEFT JOIN authors ON authors.id = favorites.author_id 
+WHERE books.id = 1;
+
+SELECT  FROM books 
+WHERE books.id 
+NOT IN ( SELECT book_id FROM favorites WHERE author_id = 1);
