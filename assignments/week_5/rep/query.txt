@@ -1,0 +1,36 @@
+SELECT * FROM users;
+
+INSERT INTO users (first_name, last_name, email, password) VALUES ("Jordan", "Jaradenson", "j@gmail.com", "11111111");
+
+SELECT * FROM recipes;
+
+INSERT INTO recipes (name, description, instructions, date_made, under, user_id) 
+VALUES ("Grilled Cheese", "Bread and melted cheese", "get 2 pecies of bread, 2 cheese slices, and mayo. Place 2 cheese in between 2 peices of bread, add may on both sides and pan fry 2m each", "2022-10-04", "YES", 2);
+
+SELECT recipes.id, recipes.created_at, recipes.updated_at, instructions, description, name, date_made, under,
+users.id as user_id, first_name, last_name, email, users.created_at as uc, users.updated_at as uu
+FROM recipes 
+JOIN users on users.id = recipes.user_id; 
+
+
+SELECT recipes.id, recipes.created_at, recipes.updated_at, instructions, description, name, date_made, under, 
+users.id as user_id, first_name, last_name, email, users.created_at as uc, users.updated_at as uu
+FROM recipes
+JOIN users on users.id = recipes.user_id
+WHERE recipes.id = 1;
+
+SELECT recipes.id, recipes.created_at, recipes.updated_at, instructions, description, name, date_made, under,
+users.id as user_id, first_name, last_name, email, users.created_at as uc, users.updated_at as uu
+FROM recipes
+JOIN users on users.id = recipes.user_id;
+
+SELECT * FROM recipes 
+LEFT JOIN users on users.id = recipes.user_id 
+WHERE user_id = 2;
+
+SELECT recipes.id, recipes.created_at, recipes.updated_at, instructions, description, name, date_made, under_,
+users.id as user_id, first_name, last_name, email, users.created_at as uc, users.updated_at as uu
+FROM recipes
+JOIN users on users.id = recipes.user_id;
+
+SELECT * FROM users WHERE id = 1;

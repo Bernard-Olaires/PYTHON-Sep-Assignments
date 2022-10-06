@@ -37,16 +37,17 @@ class User:
     def get_by_email(cls,data):
         query = "SELECT * FROM users WHERE email = %(email)s;"
         results = connectToMySQL(cls.DB).query_db(query,data)
+        print("___ GET USER BY EMAIL __", results)
         if len(results) < 1:
             return False
         return cls(results[0])
     
     @classmethod
-    def get_user_by_id(cls, data):
-        # data = {"id" : id}
+    def get_user_by_id(cls, id):
+        data = {"id" : id}
         query = "SELECT * FROM users WHERE id=%(id)s;"
         results = connectToMySQL(cls.DB).query_db(query,data)
-        print("__ GET ONE PRODUCT __", results)
+        print("__ GET ONE USER __", results)
         return cls(results[0])
     
     @staticmethod
@@ -69,6 +70,6 @@ class User:
         if len(user['password']) < 8:
             flash("Password must be at least 8 characters","register")
             is_valid= False
-        if user['password'] != user['confirm']:
+        if query.user['password'] != query.user['confirm']:
             flash("Passwords don't match","register")
         return is_valid
