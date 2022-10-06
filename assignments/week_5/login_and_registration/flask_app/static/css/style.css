@@ -71,11 +71,10 @@ body {
 
 .register-button input[type=submit]{
     margin-top: 5px;
-    padding: 5px 8px;
+    padding: 8px;
     color: white;
     background-color: #1e90ff	;
     border: none;
-    margin-left: 35px;
 }
 
 .login-button input[type=submit]{
