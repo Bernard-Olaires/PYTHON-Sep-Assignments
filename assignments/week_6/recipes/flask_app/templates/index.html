@@ -10,10 +10,11 @@
 <body>
     <div class="flexbox-container">
         <div class="flex-item-1">
+            <h1 class="header-1">REGISTER</h1>
             <form action="/user/register" method="post" class="form">
                 {% with messages = get_flashed_messages(category_filter=['register']) %}
                     {% if messages %}
-                        <div style="background: rgb(195, 95, 95)">
+                        <div style="background: rgb(195, 95, 95); text-align: center;">
                             <strong color="red">Flash AHHHHHHH!!!!</strong>
                                 {% for message in messages %}
                                 <p color="red">{{message}}</p>
@@ -21,7 +22,6 @@
                         </div>
                     {% endif %}
                 {% endwith %}
-                <h1 class="header-1">REGISTER</h1>
                 <label for="first_name">First Name:</label>
                 <input type="text" name="first_name">
                 <label for="last_name">Last Name:</label>
@@ -38,12 +38,12 @@
             </form>
         </div>
         <div class="flex-item-2">
+            <h1 class="header-2">LOG IN</h1>
             <form action="/user/login" method="post" class="form">
                 {% with messages = get_flashed_messages(category_filter=['login'])%} {% if messages%} 
                 {%for message in messages%}
-                    <p style="color: red; background:rgb(195, 95, 95)">{{message}}</p>
+                    <p style="background:rgb(195, 95, 95); text-align: center">{{message}}</p>
                 {%endfor%} {%endif%} {% endwith%}
-                <h1 class="header-2">LOG IN</h1>
                 <label for="email">Email:</label>
                 <input type="text" name="email">
                 <label for="password">Password:</label>

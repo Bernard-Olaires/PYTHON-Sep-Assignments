@@ -24,13 +24,6 @@ def login():
     session["user_id"] = logged_in_user.id
     return redirect("/dashboard")
 
-@app.route('/dashboard')
-def dashboard():
-    if "user_id" not in session:
-        return redirect("/")
-    logged_in_user = User.get_user_by_id(session["user_id"])
-    return render_template("dashboard.html", logged_in_user = logged_in_user)
-
 @app.route('/logout')
 def logout():
     session.clear()

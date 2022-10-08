@@ -1,3 +1,7 @@
+* {
+    margin: 0;
+    padding: 0;
+}
 
 body {
     background-color: #c2d4dd;
@@ -25,7 +29,7 @@ body {
 
 .flex-item-1, .flex-item-2 {
     border: 1px solid black;
-    background-color: lightslategray;
+    background-color: #455d7a;
 }
 
 /* input[type=submit] {
@@ -54,7 +58,8 @@ body {
 }
 
 .form {
-    margin-left: 10px;
+    /* margin-left: 10px; */
+    padding: 10px;
 }
 
 .header-1, .header-2 {
@@ -70,6 +75,7 @@ body {
 }
 
 .register-button input[type=submit]{
+    width: 30%;
     margin-top: 5px;
     padding: 8px;
     color: white;
@@ -78,15 +84,10 @@ body {
 }
 
 .login-button input[type=submit]{
+    width: 30%;
     margin-top: 5px;
     padding: 5px 8px;
     color: white;
     background-color: #32cd32	;
     border: none;
-    margin-left: 35px;
-}
-
-.center {
-    max-width: auto;
-    margin: 0 auto;
 }

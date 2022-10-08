@@ -1,0 +1,70 @@
+.add-body{
+    min-width: 1000px;
+}
+
+
+.head-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.dash {
+    margin-left: 550px;
+}
+
+.container {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: #233142;
+    color: white;
+    display: flex;
+}
+
+.one {
+    display: flex;
+    align-items: center;
+}
+
+.two {
+    margin: 20px 0px 0px 10px;
+}
+
+.radio {
+    display: flex;
+    margin-top: 10px;
+}
+
+.flex-1 {
+    width: 60%;
+    margin-left: 70px;
+}
+
+.flex-2 {
+    margin-top: 50px;
+}
+
+#name {
+    margin-left: 45px;
+}
+
+#date-l {
+    margin-left: 10px;
+}
+
+.date-i {
+    width: 90%;
+}
+
+.submit {
+    margin: 130px 0px 0px 50px;
+}
+
+
+
+.error {
+    background: rgb(195, 95, 95); 
+    text-align: center;
+}

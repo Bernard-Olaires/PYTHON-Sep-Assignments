@@ -7,7 +7,7 @@ EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 bcrypt = Bcrypt(app)
 
 class User:
-    DB = "log_in_reg"
+    DB = "recipes"
     
     def __init__(self, data):
         self.id = data['id']
@@ -41,7 +41,7 @@ class User:
         SELECT * FROM users WHERE id= %(id)s;
         """
         results = connectToMySQL(cls.DB).query_db(query, data)
-        print("__ GET ONE PRODUCT __", results)
+        print("__ GET ONE USER __", results)
         return cls(results[0])
     
     @classmethod
